@@ -1,0 +1,6 @@
+com/location/quiz/repository/LocationRepository.class
+com/location/quiz/service/LocationService.class
+com/location/quiz/LocationQuizApplication.class
+com/location/quiz/service/impl/LocationServiceImpl.class
+com/location/quiz/entity/Location.class
+com/location/quiz/controller/LocationController.class
