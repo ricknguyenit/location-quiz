@@ -26,31 +26,66 @@ public class LocationController {
     @Autowired
     private LocationService locationService;
 
+    /**
+     * Create new location
+     * 
+     * @param location
+     * @return
+     */
+
     @PostMapping
     public Location create(@Valid @RequestBody Location location) {
         return locationService.createLocation(location);
     }
 
+    /**
+     * Update existed location
+     * 
+     * @param id
+     * @param location
+     */
     @PutMapping(value = "/{id}")
     public void update(@PathVariable("id") String id, @Valid @RequestBody Location location) {
         locationService.updateLocation(id, location);
     }
 
+    /**
+     * Delete existed location
+     * 
+     * @param id
+     */
     @DeleteMapping(value = "/{id}")
     public void delete(@PathVariable String id) {
         locationService.deleteLocation(id);
     }
 
+    /**
+     * Get all locations
+     * 
+     * @return
+     */
     @GetMapping
     public List<Location> list() {
         return locationService.getAll();
     }
 
+    /**
+     * Get location by id
+     * 
+     * @param id
+     * @return
+     */
     @GetMapping(value = "/{id}")
     public Location findById(@PathVariable("id") String id) {
         return locationService.getLocationById(id);
     }
 
+    /**
+     * Search location
+     * 
+     * @param address
+     * @return
+     */
     @GetMapping(value = "/search")
     public List<Location> search(@RequestParam String address) {
         return locationService.searchLocation(address);
